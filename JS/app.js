@@ -1,5 +1,6 @@
 class Player {
     constructor() {
+        this.currentScore = 0;
         this.defaultScore = document.querySelector('#total-clicks').innerHTML;
 
         this.image = document.getElementById('main-image');
@@ -8,15 +9,17 @@ class Player {
     // Update when the image is clicked.
     update() {
 
-        this.image.addEventListener('click', function(e) {
+        this.image.addEventListener('click', (e) => {
             let clickedTarget = e.target;
 
-            console.log(clickedTarget);
+            this.currentScore += 1; // Increment default 0 by 1.
+            console.log(`Current number of clicks is ${this.currentScore}`);
+            
         })
     }
 
     consoleLog() {
-        console.log(this.defaultScore, this.image);
+        console.log(this.defaultScore, this.image, this.currentScore);
     }
 }
 
