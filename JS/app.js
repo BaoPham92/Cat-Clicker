@@ -3,21 +3,26 @@ class Player {
         this.currentScore = 0;
         this.defaultScore = document.querySelector('#total-clicks');
 
-        this.image = document.getElementById('main-image');
+        this.images = document.querySelectorAll('.cat-image');
     }
 
     // Update when the image is clicked.
     update() {
 
-        this.image.addEventListener('click', (e) => {
-            let clickedTarget = e.target;
+        for (const image of this.images) {
 
-            this.currentScore += 1; // Increment default 0 by 1.
-            console.log(`Current number of clicks is ${this.currentScore}`);
+            image.addEventListener('click', (e) => {
+                let clickedTarget = e.target;
+                console.log(clickedTarget); // Event delegation.
 
-            this.defaultScore.innerHTML = `Number of clicks: ${this.currentScore}`;
-            console.log(this.defaultScore);
-        })
+                this.currentScore += 1; // Increment default 0 by 1.
+                // console.log(`Current number of clicks is ${this.currentScore}`);
+
+                this.defaultScore.innerHTML = `Number of clicks: ${this.currentScore}`;
+                // console.log(this.defaultScore);
+            })
+        }
+
     }
 
     consoleLog() {
