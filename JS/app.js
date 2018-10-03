@@ -1,7 +1,7 @@
 class Player {
     constructor() {
         this.currentScore = 0;
-        this.defaultScore = document.querySelector('#total-clicks').innerHTML;
+        this.defaultScore = document.querySelector('#total-clicks');
 
         this.image = document.getElementById('main-image');
     }
@@ -14,7 +14,9 @@ class Player {
 
             this.currentScore += 1; // Increment default 0 by 1.
             console.log(`Current number of clicks is ${this.currentScore}`);
-            
+
+            this.defaultScore.innerHTML = `Number of clicks: ${this.currentScore}`;
+            console.log(this.defaultScore);
         })
     }
 
