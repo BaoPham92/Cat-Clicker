@@ -20,6 +20,7 @@ class Player {
     }
 }
 
+// Instance of class Player.
 const player = new Player();
 player.consoleLog();
 
