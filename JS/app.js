@@ -15,8 +15,7 @@ class Player {
                 let clickedTarget = e.target;
                 console.log(clickedTarget); // Event delegation.
 
-                this.currentScore += 1; // Increment default 0 by 1.
-                // console.log(`Current number of clicks is ${this.currentScore}`);
+                clickedTarget === image ? this.currentScore += 1 : 'error';
 
                 this.defaultScore.innerHTML = `Number of clicks: ${this.currentScore}`;
                 // console.log(this.defaultScore);
@@ -26,7 +25,7 @@ class Player {
     }
 
     consoleLog() {
-        console.log(this.defaultScore, this.image, this.currentScore);
+        console.log(this.defaultScore, this.images, this.currentScore);
     }
 }
 
