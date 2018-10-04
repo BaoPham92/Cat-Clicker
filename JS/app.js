@@ -3,6 +3,7 @@ class Player {
         this.currentScore = 0;
         this.defaultScore = document.querySelector('#total-clicks');
 
+        // Obtain images from HTML.
         this.images = document.querySelectorAll('.cat-image');
     }
 
@@ -11,11 +12,19 @@ class Player {
 
         for (const image of this.images) {
 
+            let compareSrc = image.attributes.getNamedItem('src'),
+                ifcontainsH4 = Array.from(image.parentElement.childNodes).includes('h4'),
+                clickedTarget;
+
             image.addEventListener('click', (e) => {
-                let clickedTarget = e.target;
-                console.log(clickedTarget); // Event delegation.
+                clickedTarget = e.target; // Event delegation.
+                console.log(clickedTarget);
 
                 clickedTarget === image ? this.currentScore += 1 : 'error';
+
+                (compareSrc === compareSrc) && ifcontainsH4 ? console.log('Parent element contains a h4 tag.') : console.log('error');
+
+                    console.log(compareSrc === compareSrc);
 
                 this.defaultScore.innerHTML = `Number of clicks: ${this.currentScore}`;
                 // console.log(this.defaultScore);
