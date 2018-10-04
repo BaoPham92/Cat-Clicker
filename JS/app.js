@@ -3,6 +3,10 @@ class Player {
         this.currentScore = 0;
         this.defaultScore = document.querySelector('#total-clicks');
 
+        // Add elements and content for clicks.
+        this.addHeader = document.createElement('h4');
+        this.addText = document.createTextNode('The number of times you clicked this image:');
+
         // Obtain images from HTML.
         this.images = document.querySelectorAll('.cat-image');
     }
@@ -20,7 +24,7 @@ class Player {
                 clickedTarget = e.target; // Event delegation.
                 console.log(clickedTarget);
 
-                clickedTarget === image ? this.currentScore += 1 : 'error';
+                clickedTarget === image ? this.currentScore += 1 : console.log('error');
 
                 (compareSrc === compareSrc) && ifcontainsH4 ? console.log('Parent element contains a h4 tag.') : console.log('error');
 
