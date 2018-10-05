@@ -3,10 +3,6 @@ class Player {
         this.currentScore = 0;
         this.defaultScore = document.querySelector('#total-clicks');
 
-        // Add elements and content for clicks.
-        this.addHeader = document.createElement('h4');
-        this.addText = document.createTextNode('The number of times you clicked this image:');
-
         // Obtain images from HTML.
         this.images = document.querySelectorAll('.cat-image');
     }
@@ -16,22 +12,23 @@ class Player {
 
         for (const image of this.images) {
 
+            let addHeader = document.createElement("h4"), text = document.createTextNode('The number of times you have clicked:');
+            let newH4 = addHeader.appendChild(text);
+
             let compareSrc = image.attributes.getNamedItem('src'),
-                ifcontainsH4 = Array.from(image.parentElement.childNodes).includes('h4'),
-                clickedTarget;
+                ifcontainsH4 = Array.from(image.parentElement.childNodes).includes('h4');
 
             image.addEventListener('click', (e) => {
-                clickedTarget = e.target; // Event delegation.
+                let clickedTarget = e.target; // Event delegation.
                 console.log(clickedTarget);
 
                 clickedTarget === image ? this.currentScore += 1 : console.log('error');
 
-                (compareSrc === compareSrc) && ifcontainsH4 ? console.log('Parent element contains a h4 tag.') : console.log('error');
-
-                    console.log(compareSrc === compareSrc);
+                (compareSrc === compareSrc) && !ifcontainsH4 ? image.parentElement.insertBefore(newH4, image.parentElement.children[1]) : console.log('Parent element contains a h4 tag.');
+                // console.log(compareSrc === compareSrc); // Console.log confirmination message.
 
                 this.defaultScore.innerHTML = `Number of clicks: ${this.currentScore}`;
-                // console.log(this.defaultScore);
+
             })
         }
 
