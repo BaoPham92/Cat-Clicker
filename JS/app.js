@@ -5,19 +5,22 @@ class Player {
 
         // Obtain images from HTML.
         this.images = document.querySelectorAll('.cat-image');
+        this.amountOfImages = [];
     }
 
     // Update when the image is clicked.
     update() {
 
-        // Declarations.
-        let addHeader = document.createElement("h4"), text = document.createTextNode('The number of times you have clicked:');
-        addHeader.appendChild(text);
-        console.log('addHeader');
+        this.howMany(); // Create var === number of images to contain/store info.
+        console.log(this.amountOfImages[0]) // Check indexes.
 
         for (const image of this.images) {
 
-            // Declarations for conditionals/comparisons.
+            // Declarations
+            let addHeader = document.createElement("h4"), text = document.createTextNode('The number of times you have clicked:');
+            addHeader.appendChild(text);
+
+            // Conditionals / Comparisons.
             let compareSrc = image.attributes.getNamedItem('src'),
                 ifcontainsH4 = Array.from(image.parentElement.childNodes).includes('h4');
 
@@ -36,6 +39,17 @@ class Player {
             })
         }
 
+    }
+
+    // Declaration creator for future image additions to be clicked on.
+    howMany() {
+
+        // Creates the amount of variables for the amount of images.
+        for(let i = 0; i < this.images.length; i++) {
+            this.amountOfImages[i] = `image` + (i + 1);
+            
+            console.log(this.amountOfImages);
+        }
     }
 
     consoleLog() {
