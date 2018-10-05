@@ -10,12 +10,14 @@ class Player {
     // Update when the image is clicked.
     update() {
 
+        // Declarations.
+        let addHeader = document.createElement("h4"), text = document.createTextNode('The number of times you have clicked:');
+        addHeader.appendChild(text);
+        console.log('addHeader');
+
         for (const image of this.images) {
 
-            // Declarations.
-            let addHeader = document.createElement("h4"), text = document.createTextNode('The number of times you have clicked:');
-            let newH4 = addHeader.appendChild(text);
-
+            // Declarations for conditionals/comparisons.
             let compareSrc = image.attributes.getNamedItem('src'),
                 ifcontainsH4 = Array.from(image.parentElement.childNodes).includes('h4');
 
@@ -26,7 +28,7 @@ class Player {
 
                 clickedTarget === image ? this.currentScore += 1 : console.log('error');
 
-                (compareSrc === compareSrc) && !ifcontainsH4 ? image.parentElement.insertBefore(newH4, image.parentElement.children[1]) : console.log('Parent element contains a h4 tag.');
+                (compareSrc === compareSrc) && !ifcontainsH4 ? image.parentElement.insertBefore(addHeader, image.parentElement.children[1]) : console.log('Parent element contains a h4 tag.');
                 // console.log(compareSrc === compareSrc); // Console.log confirmination message.
 
                 this.defaultScore.innerHTML = `Number of clicks: ${this.currentScore}`;
