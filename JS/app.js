@@ -12,12 +12,14 @@ class Player {
 
         for (const image of this.images) {
 
+            // Declarations.
             let addHeader = document.createElement("h4"), text = document.createTextNode('The number of times you have clicked:');
             let newH4 = addHeader.appendChild(text);
 
             let compareSrc = image.attributes.getNamedItem('src'),
                 ifcontainsH4 = Array.from(image.parentElement.childNodes).includes('h4');
 
+            // Image click listener for scores.
             image.addEventListener('click', (e) => {
                 let clickedTarget = e.target; // Event delegation.
                 console.log(clickedTarget);
