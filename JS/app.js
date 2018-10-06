@@ -12,7 +12,6 @@ class Player {
     update() {
 
         this.howMany(); // Create var === number of images to contain/store info.
-        console.log(this.amountOfImages[0] = this.images) // Check indexes.
 
         for (const image of this.images) {
 
