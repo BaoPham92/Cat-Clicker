@@ -12,13 +12,14 @@ class Player {
     update() {
 
         this.howMany(); // Create var === number of images to contain/store info.
-        console.log(this.amountOfImages[0]) // Check indexes.
+        console.log(this.amountOfImages[0] = this.images) // Check indexes.
 
         for (const image of this.images) {
 
             // Declarations
-            let addHeader = document.createElement("h4"), text = document.createTextNode('The number of times you have clicked:');
-            addHeader.appendChild(text);
+            let addHeader = document.createElement("h4"), 
+                text = document.createTextNode('The number of times you have clicked:');
+                addHeader.appendChild(text);
 
             // Conditionals / Comparisons.
             let compareSrc = image.attributes.getNamedItem('src'),
@@ -46,8 +47,11 @@ class Player {
 
         // Creates the amount of variables for the amount of images.
         for(let i = 0; i < this.images.length; i++) {
+
+            // Future images with class of 'cat-image' is now stored in their own variables in a array.
             this.amountOfImages[i] = `image` + (i + 1);
-            
+            this.amountOfImages[i] = this.images[i];
+
             console.log(this.amountOfImages);
         }
     }
