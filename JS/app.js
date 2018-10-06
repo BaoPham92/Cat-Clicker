@@ -5,7 +5,7 @@ class Player {
 
         // Obtain images from HTML.
         this.images = document.querySelectorAll('.cat-image');
-        this.amountOfImages = [];
+        this.amountOfImages = {name: 'placeholder', age: "placeholder"};
     }
 
     // Update when the image is clicked.
@@ -48,11 +48,12 @@ class Player {
         for(let i = 0; i < this.images.length; i++) {
 
             // Future images with class of 'cat-image' is now stored in their own variables in a array.
-            this.amountOfImages[i] = `image` + (i + 1);
-            this.amountOfImages[i] = this.images[i];
+            this.amountOfImages[i] = {};
+            this.amountOfImages[i].element = this.images[i];
+            this.amountOfImages[i].clicks = 0;
 
-            console.log(this.amountOfImages);
         }
+        console.log(this.amountOfImages);
     }
 
     consoleLog() {
