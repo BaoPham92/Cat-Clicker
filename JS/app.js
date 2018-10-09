@@ -54,7 +54,9 @@ class Player {
 
                 // Push elements to container if container !have element.
                 Array.from(document.querySelectorAll('h4')).forEach((index) => {
-                    !headerContainer.includes(index.nextElementSibling) ? headerContainer.push(index.nextElementSibling) : console.log('error');
+                    !headerContainer.includes(index.nextElementSibling)
+                        ? headerContainer.push(index.nextElementSibling)
+                        : console.log('error');
                 })
 
                 // Declaration / and generators that trigger for clicks based on clicked target element.
