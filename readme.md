@@ -11,4 +11,6 @@
 
 ## Todo's
 
-- The code in update and howMany methods currently is a core piece for the automatic data stream. There is a slight problem I will need to look at. The `next()` function call is what limits the ability for code and future images. Will probably have too find a way to stream that based on number of images as well.
+- The code in update and howMany methods currently is a core piece for the automatic data stream. There is a slight problem I will need to look at. The `next()` function call is what limits the ability for code and future images. Will probably have too find a way to stream that based on number of images as well. 
+###### Update: 
+Just took a look with the temporary duplicate of the HTML elements, and yes the `next()` needs to be adjusted / streamlined.
