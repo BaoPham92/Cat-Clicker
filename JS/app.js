@@ -6,7 +6,7 @@ class Player {
         this.amountOfImages = {};
 
         // Property for whether elements are hidden.
-        this.isHidden = [];
+        this.isHidden = Array.from(document.querySelectorAll('.hidden'));
 
         // Helper object.
         this.dataHelper = {
@@ -92,6 +92,24 @@ class Player {
         }
     }
 
+    // Method for list of images
+    imageList() {
+        console.log("imageList is working.")
+
+        const list = Array.from(document.querySelectorAll('#cat-list li'));
+
+        list.forEach((element, index) => {
+
+            element.addEventListener('click', (e) => {
+                const clickedTarget = e.target; // Event delegation;
+                const elementContainer = [];
+
+                clickedTarget === element && this.isHidden.filter((element, indexOfHidden) => { indexOfHidden === index;}) ? this.isHidden[index].classList.toggle('hidden') : console.log('error');
+            })
+
+        })
+    }
+
     // Declaration creator for future image additions to be clicked on.
     howMany() {
 
@@ -112,9 +130,10 @@ class Player {
 
 // Instance of class Player.
 const player = new Player();
-player.consoleLog();
+// player.consoleLog();
 
 // Loop for event listeners that are apart of a class.
 (function loop() {
     player.imageClicks();
+    player.imageList();
 })(this)
