@@ -7,7 +7,7 @@ class Player {
     }
 
     // Update when the image is clicked.
-    update() {
+    imageClicks() {
 
         this.howMany(); // Create var === number of images to contain/store info.
 
@@ -98,7 +98,7 @@ class Player {
     }
 
     consoleLog() {
-        console.log(this.defaultScore, this.images, this.currentScore);
+        console.log(this.images);
     }
 }
 
@@ -108,5 +108,5 @@ player.consoleLog();
 
 // Loop for event listeners that are apart of a class.
 (function loop() {
-    player.update();
+    player.imageClicks();
 })(this)
