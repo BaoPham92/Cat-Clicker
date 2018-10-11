@@ -77,6 +77,8 @@ class Player {
                 console.log(mapped.next());
                 console.log(mapped.next());
                 console.log(mapped.next());
+                console.log(mapped.next());
+                console.log(mapped.next());
 
             })
         }

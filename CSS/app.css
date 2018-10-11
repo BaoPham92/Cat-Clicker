@@ -1,0 +1,23 @@
+.hidden {
+    display: none;
+}
+
+#cat-list ul {
+    background: #333;
+    width: 50%;
+    overflow: auto;
+    white-space: nowrap;
+}
+
+#cat-list li {
+display: inline-block;
+text-align: center;
+width: 25%;
+color: white;
+font-size: 2em;
+}
+
+#cat-list li:hover {
+background-color: aliceblue;
+cursor: pointer;
+}
