@@ -8,7 +8,7 @@ class Player {
         // Property for whether elements are hidden.
         this.isHidden = [];
 
-        // Help object.
+        // Helper object.
         this.dataHelper = {
             generator: function* (imageObj) {
                 for (let i = 0; i < imageObj; i++) {
