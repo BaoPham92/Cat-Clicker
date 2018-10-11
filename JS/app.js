@@ -4,6 +4,31 @@ class Player {
         // Obtain images from HTML.
         this.images = document.querySelectorAll('.cat-image');
         this.amountOfImages = {};
+
+        // Property for whether elements are hidden.
+        this.isHidden = [];
+
+        // Help object.
+        this.dataHelper = {
+            generator: function* (imageObj) {
+                for (let i = 0; i < imageObj; i++) {
+                    console.log(i);
+                    yield i;
+                }
+            },
+
+            mapIterator: function* (iterator, mapping) {
+                while (true) {
+                    let result = iterator.next();
+
+                    if (result.done) {
+                        break;
+                    }
+
+                    yield mapping(result.value);
+                }
+            }
+        };
     }
 
     // Update when the image is clicked.
@@ -13,32 +38,14 @@ class Player {
 
         let imageObj = Object.keys(this.amountOfImages).length;
 
-        // Two following generators are to iterate object of stored nested objects variables. (this.amountOfImages)
-        function* generator() {
-            for (let i = 0; i < imageObj; i++) {
-                console.log(i);
-                yield i;
-            }
-        }
-
-        function* mapIterator(iterator, mapping) {
-            while (true) {
-                let result = iterator.next();
-                if (result.done) {
-                    break;
-                }
-                yield mapping(result.value);
-            }
-        }
-
         for (const image of this.images) {
 
             // Declarations
             let addHeader = document.createElement("h4"),
-                text = document.createTextNode('The number of times you have clicked:');
-            addHeader.appendChild(text);
+                text = document.createTextNode('The number of times you have clicked:'),
+                headerContainer = [];
 
-            let headerContainer = [];
+            addHeader.appendChild(text);
 
             // Conditionals / Comparisons.
             let compareSrc = image.attributes.getNamedItem('src'),
@@ -50,7 +57,8 @@ class Player {
                 let clickedTarget = e.target; // Event delegation.
 
                 // Conditional for checking / inserting h4 element containing click data.
-                (compareSrc === compareSrc) && !ifcontainsH4 ? image.parentElement.insertBefore(addHeader, image.parentElement.children[1]) : console.log('Parent element contains a h4 tag.');
+                (compareSrc === compareSrc) && !ifcontainsH4 ? image.parentElement.insertBefore(addHeader, image.parentElement.children[1])
+                    : console.log('Parent element contains a h4 tag.');
 
                 // Push elements to container if container !have element.
                 Array.from(document.querySelectorAll('h4')).forEach((index) => {
@@ -60,7 +68,7 @@ class Player {
                 })
 
                 // Declaration / and generators that trigger for clicks based on clicked target element.
-                let values = generator(), mapped = mapIterator(values, (i) => {
+                let values = this.dataHelper.generator(imageObj), mapped = this.dataHelper.mapIterator(values, (i) => {
 
                     // Conditional.
                     const result =
