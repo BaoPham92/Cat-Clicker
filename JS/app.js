@@ -94,15 +94,15 @@ class Player {
 
     // Method for list of images
     imageList() {
-        console.log("imageList is working.")
 
+        // li tags.
         const list = Array.from(document.querySelectorAll('#cat-list li'));
 
+        // li tag conditional for revealing images.
         list.forEach((element, index) => {
 
             element.addEventListener('click', (e) => {
                 const clickedTarget = e.target; // Event delegation;
-                const elementContainer = [];
 
                 clickedTarget === element && this.isHidden.filter((element, indexOfHidden) => { indexOfHidden === index;}) ? this.isHidden[index].classList.toggle('hidden') : console.log('error');
             })
