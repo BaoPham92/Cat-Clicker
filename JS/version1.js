@@ -83,7 +83,7 @@ class Player {
                 });
 
                 // next() function calls from generators.
-                console.log(mapped.next()); console.log(mapped.next()); console.log(mapped.next()); console.log(mapped.next()); console.log(mapped.next());
+                mapped.next();
 
             })
         }
