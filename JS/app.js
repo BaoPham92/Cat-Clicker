@@ -1,5 +1,11 @@
 document.addEventListener('DOMContentLoaded', function () {
 
+    // Obj with some common use of dom interactions.
+    let domHelper = {
+        query: (data) => { return document.querySelector(data) },
+        queryAll: (data) => { return document.querySelectorAll(data) }
+    }
+
     // Objects.
 
         // Modal
@@ -30,4 +36,5 @@ document.addEventListener('DOMContentLoaded', function () {
         // console.log(localStorage.getItem('Notes'));
         
         console.log('This should log the object of all image information.', modal.imageObj[0].image)
+        console.log(domHelper.query('#cat-list'));
 })
