@@ -29,5 +29,5 @@ document.addEventListener('DOMContentLoaded', function () {
         // modal.set('Notes', 'Chapter one: Testing this might have worked.');
         // console.log(localStorage.getItem('Notes'));
         
-        console.log('This should log the object of all image information.', modal.imageObj)
+        console.log('This should log the object of all image information.', modal.imageObj[0].image)
 })
