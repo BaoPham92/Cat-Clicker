@@ -1,7 +1,9 @@
 ## Legend:
 
-- (*) = in progress.
-- (**) = finished.
+- __(*) = In progress.__
+- __(**) = Finished.__
+- __(??) = Sideboard. (Things to will fiddle with, but not a priority. Given if this repo is for practices or not.)__
+- __(--) = Removed. (No longer a focus, or not needed.)__
 
 ## Notes
 
@@ -16,12 +18,12 @@
 ## Todo's
 
 - ~~The code in update and howMany methods currently is a core piece for the automatic data stream. There is a slight problem I will need to look at. The `next()` function call is what limits the ability for code and future images. Will probably have too find a way to stream that based on number of images as well.~~ (**)
+###### ~~Update:~~ 
+~~Just took a look with the temporary duplicate of the HTML elements, and yes the `next()` needs to be adjusted / streamlined.~~ (--)
+
+- So right now I should be considered done meeting the requirements and all. However, I plan on using this challenge to test out immutable Javascript. (??)
+
 ###### Update: 
-Just took a look with the temporary duplicate of the HTML elements, and yes the `next()` needs to be adjusted / streamlined. (*)
+I will go ahead and put ~~aside writing immutable JS for now~~. 
 
-- ~~So right now I should be considered done meeting the requirements and all. However, I plan on using this challenge to test out immutable Javascript.~~
-
-###### Update: 
-I will go ahead and put aside writing immutable JS for now. 
-
-- Aside from practice, and my odd sense of starting code off in ES6 classes by default lately, lets rewrite this funcionality in a __clean-er__ fashion. Then we will move from there.
+- Aside from practice, and my odd sense of starting code off in ES6 classes by default lately, lets rewrite this funcionality in a __clean-er__ fashion. Then we will move from there. (*)
