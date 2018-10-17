@@ -6,7 +6,10 @@ document.addEventListener('DOMContentLoaded', function () {
     const domHelper = {
         // For targets.
         query: (data) => { return document.querySelector(data) },
-        queryAll: (data) => { return document.querySelectorAll(data) }
+        queryAll: (data) => { return document.querySelectorAll(data) },
+
+        // Element creation.
+        creatEl: (data) => { return document.createElement(data)}
     }
 
     // Modal
@@ -40,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function () {
             let list = domHelper.query('#image-list');
             
             for(let i = 0; i < modal.imageObj.length; i++) {
-                let li = document.createElement('li');
+                li = domHelper.creatEl('li');
                 li.textContent = i + 1;
                 list.appendChild(li);
             }
