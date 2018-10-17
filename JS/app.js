@@ -36,6 +36,12 @@ document.addEventListener('DOMContentLoaded', function () {
             viewList.init();
             viewImage.init();
         },
+
+        getListImg: (data, i) => {
+                data.getAttributeNode('name').value === modal.imageObj[i].name
+                ? domHelper.query('#image').setAttribute('src', modal.imageObj[i].image)
+                : console.log('Incorrect match.');
+        }
     };
 
     // View
@@ -46,7 +52,14 @@ document.addEventListener('DOMContentLoaded', function () {
             for(let i = 0; i < modal.imageObj.length; i++) {
                 li = domHelper.creatEl('li');
                 li.textContent = i + 1;
+                li.setAttribute('name', modal.imageObj[i].name);
                 list.appendChild(li);
+
+                li.addEventListener('click', (e)=>{
+                    let target = e.target;
+
+                    connector.getListImg(target, i);
+                })
             }
             console.log(list)
         },
