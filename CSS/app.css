@@ -2,14 +2,14 @@
     display: none;
 }
 
-#cat-list ul {
+#image-list {
     background: #333;
     width: 50%;
     overflow: auto;
     white-space: nowrap;
 }
 
-#cat-list li {
+#image-list li {
 display: inline-block;
 text-align: center;
 width: 25%;
