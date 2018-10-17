@@ -9,7 +9,6 @@
 }
 
 .admin-btn {
-    height: 50%;
     display: flex;
     background: #333;
 }
@@ -19,7 +18,7 @@
     margin: auto;
 }
 
-.admin-btn span:hover {
+div.admin-btn:hover {
     background-color: aliceblue;
     cursor: pointer;
 }
@@ -33,9 +32,11 @@
 
 #image-list li {
     margin: auto;
+    width: 70%;
     list-style-type: none;
     text-align: center;
     color: white;
+    background-color: #444;
 }
 
 #image-list li:hover {
