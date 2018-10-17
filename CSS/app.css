@@ -2,22 +2,60 @@
     display: none;
 }
 
-#image-list {
+.main {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.admin-btn {
+    height: 50%;
+    display: flex;
     background: #333;
-    width: 50%;
+}
+
+.admin-btn span {
+    color: white;
+    margin: auto;
+}
+
+.admin-btn span:hover {
+    background-color: aliceblue;
+    cursor: pointer;
+}
+
+#image-list {
+    display: flex;
+    background: #333;
     overflow: auto;
     white-space: nowrap;
 }
 
 #image-list li {
-display: inline-block;
-text-align: center;
-width: 25%;
-color: white;
-font-size: 2em;
+    margin: auto;
+    list-style-type: none;
+    text-align: center;
+    color: white;
 }
 
 #image-list li:hover {
-background-color: aliceblue;
-cursor: pointer;
+    background-color: aliceblue;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 1920px) {
+    .image-list-class,
+    #image-list {
+        width: 70%;
+        height: 75px;
+    }
+    .admin-btn {
+        width: 20%;
+        height: 75px;
+    }
+    .admin-btn,
+    .image-list-class,
+    #image-list li {
+        font-size: 1.8em;
+    }
 }

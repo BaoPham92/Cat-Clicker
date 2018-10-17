@@ -106,7 +106,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 connector.incrementClicks();
                 console.log(target === this.img);
             })
-            console.log(this.imgQ, this.h2Q, this.h2Q); // Console.log for confirmination.
+            console.log('Elements created and appended ->', this.img, this.h2, this.h2);
+            // Console.log for confirmination.
         },
 
         render: () => {
