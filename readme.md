@@ -42,7 +42,7 @@ Below will be collapsible sections containing information.
 ###### Update: 
 I will go ahead and put ~~aside writing immutable JS for now~~. 
 
-- Aside from practice, and my odd sense of starting code off in ES6 classes by default lately, lets rewrite this funcionality in a __clean-er__ fashion. Then we will move from there. (*)
+- ~~Aside from practice, and my odd sense of starting code off in ES6 classes by default lately, lets rewrite this funcionality in a __clean-er__ fashion. Then we will move from there.~~ (**)
 </details>
 
 --- 
