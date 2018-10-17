@@ -24,6 +24,7 @@ div.admin-btn:hover {
 }
 
 #image-list {
+    padding: 0;
     display: flex;
     background: #333;
     overflow: auto;
