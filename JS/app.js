@@ -23,7 +23,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 { name: 'Four', image: 'images/cat4.jpg', clicks: 0 },
                 { name: 'Five', image: 'images/cat5.jpg', clicks: 0 }
             ],
-
     };
 
     // Connector

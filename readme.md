@@ -21,6 +21,8 @@ Below will be collapsible sections containing information.
 - August 11th. Considered done now. Connected the list with the elements. By no means is the code actually pretty as it can be right now. The main goal was to just attempt to build with small tasks, then attempt to scale to other needs. Now I will be looking at how I can revise and organize a blueprint for rebuilding. (Though I have not abandon this repo for some experiments yet.)
 
 - August 12th. Changed and moved the previous index.html file to HTML folder. Renamed to version 1 as well. Part of me doing this is to compare how well I was able to adapt on spot. Honestly its better knowing Javascript writing vanilla DOM manipulation compared to using Jquery. Well, I added a new TODO.
+
+- Augusst 16th. Practice a bit of writing organizing code. Definitely a helpful way to make sure you can debug easier. So far everything is coming together. The solutions are currently temporary, at least for the working ones added anyhow. 
 </details>
 
 ---
