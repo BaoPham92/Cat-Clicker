@@ -34,6 +34,7 @@ document.addEventListener('DOMContentLoaded', function () {
             modal.image = modal.imageObj[0];
 
             viewList.init();
+            viewImage.init();
         },
     };
 
@@ -50,6 +51,25 @@ document.addEventListener('DOMContentLoaded', function () {
             console.log(list)
         },
     };
+
+    const viewImage = {
+        init: () => {
+
+            // Query and create elements.
+            let container = domHelper.query('#images'), 
+            img = domHelper.creatEl('img'), 
+            h2 = domHelper.creatEl('h2'), 
+            span = domHelper.creatEl('span');
+            
+            // Set attr and append elements to container.
+            img.setAttribute('id', 'image'), h2.setAttribute('id', 'image-name'), span.setAttribute('id', 'click');
+            container.appendChild(img);
+            container.appendChild(h2);
+            container.appendChild(span);
+
+            console.log(img,h2,h2); // Console.log for confirmination.
+        }
+    }
 
     connector.init();
 
