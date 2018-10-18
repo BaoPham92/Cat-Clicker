@@ -34,6 +34,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
             viewList.init();
             viewImage.init();
+            viewButton.init();
         },
 
         getListImg: (target, i) => {
@@ -130,9 +131,21 @@ document.addEventListener('DOMContentLoaded', function () {
     const viewButton = {
 
         init: () => {
-            let saveBtn = domHelper.query('.save-btn'),
-             cancelBtn = domHelper.query('.cancel-btn'),
-             form = domHelper.query('#admin-btn-form');
+
+            // Query elements.
+            this.saveBtn = domHelper.query('.save-btn'),
+             this.cancelBtn = domHelper.query('.cancel-btn'),
+             this.form = domHelper.query('#admin-btn-form'),
+             this.adminBtn = domHelper.query('.admin-btn'),
+            this.adminForm = domHelper.query('#admin-btn-form');
+
+             console.log(this.saveBtn, this.cancelBtn, this.form, this.adminBtn); // Expect defined declarations.
+
+            // Listener to reveal admin button's functionality.
+             this.adminBtn.addEventListener('click', (e) => {
+                 this.cancelBtn.classList.toggle('hidden'), this.saveBtn.classList.toggle('hidden'), this.adminForm.classList.toggle('hidden')  ;
+             })
+             
         }
     }
 
