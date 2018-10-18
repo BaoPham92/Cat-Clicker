@@ -1,13 +1,18 @@
+
+/* Hidden class for hiding elements. */
 .hidden {
     display: none;
 }
 
+
+/* Main tag styles */
 .main {
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
+/* Admin button Styles */
 .admin-btn {
     display: flex;
     background: #333;
@@ -23,6 +28,7 @@ div.admin-btn:hover {
     cursor: pointer;
 }
 
+/* List for image selection. */
 #image-list {
     padding: 0;
     display: flex;
