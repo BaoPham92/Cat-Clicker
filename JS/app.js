@@ -125,6 +125,17 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
+    // Admin button view
+
+    const viewButton = {
+
+        init: () => {
+            let saveBtn = domHelper.query('.save-btn'),
+             cancelBtn = domHelper.query('.cancel-btn'),
+             form = domHelper.query('#admin-btn-form');
+        }
+    }
+
     connector.init();
 
 })

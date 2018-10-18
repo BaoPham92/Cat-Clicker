@@ -25,15 +25,20 @@
 
         <div class="admin-btn">
             <span>Admin button:</span>
-            <span class="hidden">Save</span>
-            <span class="hidden">Cancel</span>
+            <span class="save-btn hidden">Save</span>
+            <span class="cancel-btn hidden">Cancel</span>
         </div>
 
-        
     </main>
-            <section id="images">
-            </section>
 
+    <section id="images"></section>
+
+    <form id="admin-btn-form" class="hidden">
+        <span>Edit information in the following fields: </span>
+        <input id="admin-btn-name" placeholder="Image's name:">
+        <input id="admin-btn-src" placeholder="Image src:">
+        <input id="admin-btn-clicks" placeholder="Image #clicks:">
+    </form>
 
     <script src="JS/app.js"></script>
 </body>
