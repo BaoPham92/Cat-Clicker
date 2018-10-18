@@ -19,7 +19,7 @@
 }
 
 div.admin-btn:hover {
-    background-color: aliceblue;
+    background-color: darkgray;
     cursor: pointer;
 }
 
@@ -41,7 +41,7 @@ div.admin-btn:hover {
 }
 
 #image-list li:hover {
-    background-color: aliceblue;
+    background-color: darkgray;
     cursor: pointer;
 }
 
