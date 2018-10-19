@@ -14,6 +14,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Modal
     const modal = {
+
+        // Image information.
         image: undefined,
         imageObj:
             [
@@ -23,6 +25,22 @@ document.addEventListener('DOMContentLoaded', function () {
                 { name: 'Four', image: 'images/cat4.jpg', clicks: 0 },
                 { name: 'Five', image: 'images/cat5.jpg', clicks: 0 }
             ],
+
+            // Data init and and methods for data manipulation.
+            init: () => {
+                !(localStorage.text) ? localStorage.text : console.log('error in modal.init function.');
+            },
+
+            add: (obj) => {
+                let textContainer = JSON.parse(localStorage.text);
+                textContainer.push(obj);
+                localStorage.text = JSON.stringify(textContainer);
+            },
+
+            showText: () => {
+                return JSON.parse(localStorage.text);
+            }
+
     };
 
     // Connector
@@ -37,6 +55,7 @@ document.addEventListener('DOMContentLoaded', function () {
             viewButton.init();
         },
 
+        // Methods for modal.imageObj data manipulation.
         getListImg: (target, i) => {
 
             let obj = modal.imageObj[i]
@@ -57,6 +76,18 @@ document.addEventListener('DOMContentLoaded', function () {
             modal.image.clicks++;
             console.log(modal.image.clicks)
             viewImage.render();
+        },
+
+        // Methods for form data (Admin button revealing inputs.)
+
+        addText: (txt) => {
+            modal.add({
+                content: txt
+            })
+        },
+
+        getText: () => {
+            return modal.showText();
         }
     };
 
@@ -101,6 +132,7 @@ document.addEventListener('DOMContentLoaded', function () {
             this.container.appendChild(this.h2);
             this.container.appendChild(this.span);
 
+            // Click listener incrementing image clicks ct.
             this.img.addEventListener('click', (e) => {
                 let target = e.target;
 
@@ -141,11 +173,18 @@ document.addEventListener('DOMContentLoaded', function () {
 
              console.log(this.saveBtn, this.cancelBtn, this.form, this.adminBtn); // Expect defined declarations.
 
-            // Listener to reveal admin button's functionality.
+            // Listener to reveal admin button's input forms.
              this.adminBtn.addEventListener('click', (e) => {
                  this.cancelBtn.classList.toggle('hidden'), this.saveBtn.classList.toggle('hidden'), this.adminForm.classList.toggle('hidden')  ;
              })
              
+             viewButton.render();
+        },
+
+        render: () => {
+            this.adminSrc = domHelper.query('#admin-btn-src'),
+            this.adminName = domHelper.query('#admin-btn-name'),
+            this.adminClicks = domHelper.query('#admin-btn-clicks');
         }
     }
 
