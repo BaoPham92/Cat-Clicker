@@ -66,6 +66,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 : console.log('Incorrect match.');
 
             modal.image = obj // Set current image upon click selection.
+
+            viewButton.render(); // Render current information to viewButton.
         },
 
         getCurrentImg: () => {
@@ -182,6 +184,8 @@ document.addEventListener('DOMContentLoaded', function () {
         },
 
         render: () => {
+
+            // Declarations.
             let formContainer = [];
 
             this.adminSrc = domHelper.query('#admin-btn-src'),
@@ -192,9 +196,10 @@ document.addEventListener('DOMContentLoaded', function () {
             formContainer.push(this.adminName),
             formContainer.push(this.adminClicks);
 
+            // Check each input element by ID for enter key.
             formContainer.forEach((element, index) => {
                 element.addEventListener('keypress', (e) => {
-                    e.keyCode === 13 ? console.log(this.adminName.value) : console.log('error');
+                    e.keyCode === 13 ? console.log(this.adminName.value, modal.image) : console.log('error');
                 })
             })
 
