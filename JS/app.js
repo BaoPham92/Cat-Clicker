@@ -26,20 +26,20 @@ document.addEventListener('DOMContentLoaded', function () {
                 { name: 'Five', image: 'images/cat5.jpg', clicks: 0 }
             ],
 
-            // Data init and and methods for data manipulation.
-            init: () => {
-                !(localStorage.text) ? localStorage.text : console.log('error in modal.init function.');
-            },
+        // Data init and and methods for data manipulation.
+        init: () => {
+            !(localStorage.text) ? localStorage.text : console.log('error in modal.init function.');
+        },
 
-            add: (obj) => {
-                let textContainer = JSON.parse(localStorage.text);
-                textContainer.push(obj);
-                localStorage.text = JSON.stringify(textContainer);
-            },
+        add: (obj) => {
+            let textContainer = JSON.parse(localStorage.text);
+            textContainer.push(obj);
+            localStorage.text = JSON.stringify(textContainer);
+        },
 
-            showText: () => {
-                return JSON.parse(localStorage.text);
-            }
+        showText: () => {
+            return JSON.parse(localStorage.text);
+        }
 
     };
 
@@ -166,25 +166,39 @@ document.addEventListener('DOMContentLoaded', function () {
 
             // Query elements.
             this.saveBtn = domHelper.query('.save-btn'),
-             this.cancelBtn = domHelper.query('.cancel-btn'),
-             this.form = domHelper.query('#admin-btn-form'),
-             this.adminBtn = domHelper.query('.admin-btn'),
-            this.adminForm = domHelper.query('#admin-btn-form');
+                this.cancelBtn = domHelper.query('.cancel-btn'),
+                this.form = domHelper.query('#admin-btn-form'),
+                this.adminBtn = domHelper.query('.admin-btn'),
+                this.adminForm = domHelper.query('#admin-btn-form');
 
-             console.log(this.saveBtn, this.cancelBtn, this.form, this.adminBtn); // Expect defined declarations.
+            console.log(this.saveBtn, this.cancelBtn, this.form, this.adminBtn); // Expect defined declarations.
 
             // Listener to reveal admin button's input forms.
-             this.adminBtn.addEventListener('click', (e) => {
-                 this.cancelBtn.classList.toggle('hidden'), this.saveBtn.classList.toggle('hidden'), this.adminForm.classList.toggle('hidden')  ;
-             })
-             
-             viewButton.render();
+            this.adminBtn.addEventListener('click', (e) => {
+                this.cancelBtn.classList.toggle('hidden'), this.saveBtn.classList.toggle('hidden'), this.adminForm.classList.toggle('hidden');
+            })
+
+            viewButton.render();
         },
 
         render: () => {
+            let formContainer = [];
+
             this.adminSrc = domHelper.query('#admin-btn-src'),
             this.adminName = domHelper.query('#admin-btn-name'),
             this.adminClicks = domHelper.query('#admin-btn-clicks');
+
+            formContainer.push(this.adminSrc),
+            formContainer.push(this.adminName),
+            formContainer.push(this.adminClicks);
+
+            formContainer.forEach((element, index) => {
+                element.addEventListener('keypress', (e) => {
+                    e.keyCode === 13 ? console.log(this.adminName.value) : console.log('error');
+                })
+            })
+
+            console.log(formContainer);
         }
     }
 
