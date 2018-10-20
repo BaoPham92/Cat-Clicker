@@ -90,6 +90,27 @@ document.addEventListener('DOMContentLoaded', function () {
 
         getText: () => {
             return modal.showText();
+        },
+
+        inputChecker: (element) => {
+
+            let currentImg = connector.getCurrentImg();
+
+                // Conditionals for changing imageObj'ss stats. (name, image, clicks)
+                this.adminName === element && !element.value.length <= 0 
+                ? currentImg.name = element.value 
+                : console.log('not working.')
+                viewImage.render();
+
+                this.adminImg === element && !element.value.length <= 0 
+                ? currentImg.image = element.value 
+                : console.log('not working.')
+                viewImage.render();
+
+                this.adminClicks === element && !element.value.length <= 0 
+                ? currentImg.clicks = element.value 
+                : console.log('not working.')
+                viewImage.render();
         }
     };
 
@@ -157,6 +178,8 @@ document.addEventListener('DOMContentLoaded', function () {
             this.h2Q.textContent = currentImg.name;
             this.spanQ.textContent = currentImg.clicks;
             this.imgQ.src = currentImg.image;
+
+            console.log(this.adminName.getAttributeNode('value').value)
         }
     }
 
@@ -188,18 +211,18 @@ document.addEventListener('DOMContentLoaded', function () {
             // Declarations.
             let formContainer = [];
 
-            this.adminSrc = domHelper.query('#admin-btn-src'),
+            this.adminImg = domHelper.query('#admin-btn-img'),
             this.adminName = domHelper.query('#admin-btn-name'),
             this.adminClicks = domHelper.query('#admin-btn-clicks');
 
-            formContainer.push(this.adminSrc),
+            formContainer.push(this.adminImg),
             formContainer.push(this.adminName),
             formContainer.push(this.adminClicks);
 
             // Check each input element by ID for enter key.
             formContainer.forEach((element, index) => {
                 element.addEventListener('keypress', (e) => {
-                    e.keyCode === 13 ? console.log(this.adminName.value, modal.image) : console.log('error');
+                    e.keyCode === 13 ? connector.inputChecker(element): console.log('error');
                 })
             })
 
