@@ -17,6 +17,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Image information.
         image: undefined,
+        currentindex: undefined,
         imageObj:
             [
                 { name: 'One', image: 'images/cat1.jpg', clicks: 0 },
@@ -66,6 +67,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 : console.log('Incorrect match.');
 
             modal.image = obj // Set current image upon click selection.
+            modal.currentindex = target; // Set current selection of image.
 
             viewButton.render(); // Render current information to viewButton.
         },
@@ -98,7 +100,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 // Conditionals for changing imageObj'ss stats. (name, image, clicks)
                 this.adminName === element && !element.value.length <= 0 
-                ? currentImg.name = element.value 
+                ? currentImg.name = element.value
                 : console.log('not working.')
                 viewImage.render();
 
@@ -144,7 +146,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 this.img = domHelper.creatEl('img'),
                 this.h2 = domHelper.creatEl('h2'),
                 this.span = domHelper.creatEl('span');
-
 
             // Set attr and append elements to container.
             this.img.setAttribute('id', 'image'),
@@ -196,7 +197,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
             // Listener to reveal admin button's input forms.
             this.adminBtn.addEventListener('click', (e) => {
-                this.cancelBtn.classList.toggle('hidden'), this.saveBtn.classList.toggle('hidden'), this.adminForm.classList.toggle('hidden');
+                this.cancelBtn.classList.toggle('hidden'), 
+                this.saveBtn.classList.toggle('hidden'), 
+                this.adminForm.classList.toggle('hidden');
             })
 
             viewButton.render();
@@ -218,7 +221,12 @@ document.addEventListener('DOMContentLoaded', function () {
             // Check each input element by ID for enter key.
             formContainer.forEach((element, index) => {
                 element.addEventListener('keypress', (e) => {
+                    
+                    // Conditionals for input change.
                     e.keyCode === 13 ? connector.inputChecker(element): console.log('error');
+
+                    // Change the current selection attribute from the list of images. (Scroll bar selection.)
+                    e.keyCode === 13 ? modal.currentindex.getAttributeNode('name').value = this.h2Q.textContent: console.log('error');
                 })
             })
 
