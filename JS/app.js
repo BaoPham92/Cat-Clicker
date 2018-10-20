@@ -162,8 +162,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 connector.incrementClicks();
                 console.log(target === this.img);
             })
-            console.log('Elements created and appended ->', this.img, this.h2, this.h2);
-            // Console.log for confirmination.
         },
 
         render: () => {
@@ -196,8 +194,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 this.adminBtn = domHelper.query('.admin-btn'),
                 this.adminForm = domHelper.query('#admin-btn-form');
 
-            console.log(this.saveBtn, this.cancelBtn, this.form, this.adminBtn); // Expect defined declarations.
-
             // Listener to reveal admin button's input forms.
             this.adminBtn.addEventListener('click', (e) => {
                 this.cancelBtn.classList.toggle('hidden'), this.saveBtn.classList.toggle('hidden'), this.adminForm.classList.toggle('hidden');
@@ -226,7 +222,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 })
             })
 
-            console.log(formContainer);
         }
     }
 
