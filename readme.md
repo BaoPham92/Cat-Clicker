@@ -23,6 +23,9 @@ Below will be collapsible sections containing information.
 - August 12th. Changed and moved the previous index.html file to HTML folder. Renamed to version 1 as well. Part of me doing this is to compare how well I was able to adapt on spot. Honestly its better knowing Javascript writing vanilla DOM manipulation compared to using Jquery. Well, I added a new TODO.
 
 - Augusst 16th. Practice a bit of writing organizing code. Definitely a helpful way to make sure you can debug easier. So far everything is coming together. The solutions are currently temporary, at least for the working ones added anyhow. 
+
+- August 19th. I was able to finally get the input from users to change the stats of information and I also fixed a bug after I noticed when attempting to reselect the same image item, you could not reselect that item if you permanently change the image object's name property. I would definitely say this is a good revision after just messing around with the simple app at first. 
+The class option at first probably provided less code, but really the modal was not too efficient if I needed to adapt again. I may have even needed a restructure / overhaul in some areas because of it. Seperating concern is the best practice.
 </details>
 
 ---
@@ -43,6 +46,8 @@ Below will be collapsible sections containing information.
 I will go ahead and put ~~aside writing immutable JS for now~~. 
 
 - ~~Aside from practice, and my odd sense of starting code off in ES6 classes by default lately, lets rewrite this funcionality in a __clean-er__ fashion. Then we will move from there.~~ (**)
+
+- Second look at the code for sorting and organizing before evaluating the next todo. (*)
 </details>
 
 --- 
